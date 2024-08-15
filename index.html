@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- To Prevent favicon.ico Request -->
+  <link rel="icon" href="data:,">
+
+</head>
+
+<body>
+
+  <div class="main-div">
+    <div class="game-status">
+      <div class="content">
+        <img src="images/lost.gif" alt="">
+        <h4>Game Over</h4>
+        <p>The correct word was: <b>Rainbow</b></p>
+        <button class="playAgain">Play Again</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="image-part">
+        <img src="images/hangman-0.svg" alt="">
+        <h2>Hangman Game</h2>
+      </div>
+      <div class="logic-part">
+        <div class="letters-holder">
+          <ul class="letters"></ul>
+        </div>
+        <div class="hint-section">
+          <h4 class="hint">
+            Hint: <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, illum aspernatur reiciendis mollitia
+              nesciunt quae quod perferendis at voluptates eum aperiam quidem id nostrum eius quas, laboriosam maxime!
+              Maiores, unde?</b>
+          </h4>
+          <h4 class="guesses">
+            Incorrect Guesses: <b> 0 / 6</b>
+          </h4>
+        </div>
+        <div class="keyboard"></div>
+      </div>
+    </div>
+  </div>
+  <audio id="win" src="audio/true.mp3" preload="auto"></audio>
+  <audio id="loss" src="audio/wrong.mp3" preload="auto"></audio>
+
+  <script src="word-list.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #5e63ba;
+  --secondery-color: #8e92dd;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global Rules */
+
+.main-div {
+  position: relative;
+}
+
+.main-div .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #eee;
+  border-radius: 8px;
+  padding: 25px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.main-div .container .image-part {
+  text-align: center;
+  flex-basis: 50%;
+}
+
+.main-div .container .image-part img {
+  max-width: 100%;
+}
+
+.main-div .container .image-part h2 {
+  color: var(--main-color);
+  font-size: 28px;
+}
+
+.main-div .container .logic-part {
+  text-align: center;
+  flex-basis: 50%;
+}
+
+.main-div .container .logic-part .letters-holder {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.main-div .container .logic-part .letters-holder .letters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.main-div .container .logic-part .letters-holder ul li {
+  width: 40px;
+  height: 40px;
+  border-bottom: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.main-div .container .logic-part .letters-holder ul li.done {
+  /* border-bottom: 3px solid var(--main-color); */
+  background-color: lightgreen;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  text-transform: uppercase;
+}
+
+.logic-part .hint-section {
+  margin-bottom: 30px;
+}
+
+.logic-part .hint-section .hint b {
+  font-weight: normal;
+}
+
+.logic-part .hint-section .guesses b {
+  color: red;
+  font-weight: 600;
+}
+
+.logic-part .keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.logic-part .keyboard button {
+  background-color: var(--main-color);
+  padding: 8px;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  width: calc((100% / 9) - 5px);
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+/* .logic-part .keyboard button[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+} */
+
+.logic-part .keyboard button.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.logic-part .keyboard button:hover {
+  background-color: var(--secondery-color);
+  cursor: pointer;
+}
+
+.main-div .game-status {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0 0 0 / 0.6);
+  z-index: 5;
+  transition: 0.4s;
+}
+
+.main-div .game-status.show {
+  display: flex;
+  pointer-events: auto;
+}
+
+.main-div .game-status .content {
+  background-color: #eee;
+  border-radius: 10px;
+  text-align: center;
+  padding: 35px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.main-div .game-status .content img {
+  max-width: 130px;
+}
+
+.main-div .game-status .content h4 {
+  font-size: 25px;
+  color: red;
+  font-weight: bold;
+}
+
+.main-div .game-status .content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.main-div .game-status .content p b {
+  color: var(--main-color);
+}
+
+.main-div .game-status .content button {
+  border: none;
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 8px;
+  padding: 18px;
+  transition: 0.3s;
+}
+
+.main-div .game-status .content button:hover {
+  background-color: var(--secondery-color);
+}
